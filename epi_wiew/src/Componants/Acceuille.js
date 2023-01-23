@@ -1,38 +1,27 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import axios from "axios";
 
 const BetaseriesOAuth2 = () => {
-  const [token, setToken] = useState(null);
-  const [error, setError] = useState(null);
+  const [url, setUrl] = useState('');
 
-  const handleAuth = async () => {
-    try {
-      // Requête de demande de jeton
-      const response = await axios.post('https://api.betaseries.com/oauth/access_token', {
-        client_id: '5e5b18e63fb7',
-        client_secret: '8a63bc9f71009ec837ce294dd27d919e',
-        redirect_uri: 'http://localhost:3000/Profile',
-        code: 'AUTHORIZATION_CODE',
-        grant_type: 'authorization_code'
-      });
-      setToken(response.data.access_token);
-    } catch (err) {
-      setError(err);
-    }
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get('code');
+    console.log(code);
+  }, []);
 
-  };
+  const handleClick = () => {
+    const clientId = "5e5b18e63fb7";
+    const redirectUri = "http://localhost:3000/Profile";
+    setUrl(`https://www.betaseries.com/authorize?client_id=${clientId}&redirect_uri=${redirectUri}`);
+  }
 
   return (
     <div>
-          
-        <h1>Idientifier-vous</h1> <br/>
-      <button onClick={handleAuth}>Authorize</button>
-      {token && <p>Access token: {token}</p>}
-      {error && <p>Error: {error.message}</p>}
-      {token && <Link to="/Profile">Profile</Link>}
+      <button onClick={handleClick}>Connecter avec Betaseries</button>
+      {url && <a href={url}>Se connecter</a>}
     </div>
   );
-};
+}
 
 export default BetaseriesOAuth2;
