@@ -7,6 +7,8 @@ const Profile = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
     console.log(code);
+
+
     const clientId = "5e5b18e63fb7";
     const clientSecret = "8a63bc9f71009ec837ce294dd27d919e";
     const redirectUri = "http://localhost:3000/Profile";
@@ -21,8 +23,6 @@ const Profile = () => {
         axios.post('https://api.betaseries.com/oauth/access_token', data, config)
             .then(response => {
                 console.log(response.data);
-                const userToken = response.data
-                localStorage.setItem("userToken", userToken)
             })
             .catch(error => {
                 console.log(error);
