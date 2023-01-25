@@ -10,7 +10,6 @@ const BetaseriesOAuth2 = () => {
   // }, []);
 
   const handleClick = () => {
-
     const clientId = "5e5b18e63fb7";
     const redirectUri = "http://localhost:3000/Profile";
     setUrl(`https://www.betaseries.com/authorize?client_id=${clientId}&redirect_uri=${redirectUri}`)
@@ -22,7 +21,7 @@ const BetaseriesOAuth2 = () => {
   const clientId = "5e5b18e63fb7";
   const clientSecret = "8a63bc9f71009ec837ce294dd27d919e";
   const redirectUri = "http://localhost:3000/Profile";
-  
+
   const postData = () => {
     const config = {
       headers: {
@@ -41,10 +40,11 @@ const BetaseriesOAuth2 = () => {
   if (code) {
     postData()
   }
-  
+
   return (
-    <div>
-      <button onClick={handleClick}>Se connecter avec Betaseries</button>
+    <div id='main'>
+      <button className='btn btn-primary' onClick={handleClick}>Se connecter avec Betaseries</button>
+      <br />
       {url && <a href={url}>Clic ici pour poursuivre l'identification</a>}
     </div>
   );
