@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import Accueil from './Componants/Acceuille';
 import Series from './Componants/Series'
 import Profile from './Componants/Profile';
+import Movies from './Componants/Movies';
 import { createRoot } from "react-dom/client";
 import {
   createBrowserRouter,
@@ -14,7 +15,7 @@ import {
 } from "react-router-dom";
 
 const router = createBrowserRouter([
-  {
+    {
     path: "/",
     element: (
         <Accueil />
@@ -30,6 +31,12 @@ const router = createBrowserRouter([
     path: "Series",
     element: (
         <Series />
+    ),
+  },
+  {
+    path: "Movies",
+    element: (
+        <Movies />
     ),
   },
 ]);

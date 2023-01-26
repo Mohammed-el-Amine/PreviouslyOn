@@ -1,4 +1,6 @@
 import React, { useState } from 'react'; // add , useEffect if u want use it
+import Header from './Header';
+
 
 const BetaseriesOAuth2 = () => {
   const [url, setUrl] = useState('');
@@ -17,6 +19,7 @@ const BetaseriesOAuth2 = () => {
   
   return (
     <div>
+    <Header/>
       <button onClick={handleClick}>Se connecter avec Betaseries</button>
       {url && <a href={url}>Clic ici pour poursuivre l'identification</a>}
     </div>
