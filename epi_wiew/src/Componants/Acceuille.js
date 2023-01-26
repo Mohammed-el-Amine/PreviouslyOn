@@ -16,11 +16,12 @@ const BetaseriesOAuth2 = () => {
     const redirectUri = "http://localhost:3000/Profile";
     setUrl(`https://www.betaseries.com/authorize?client_id=${clientId}&redirect_uri=${redirectUri}`)
   }
-  
+
   return (
-    <div>
-    <Header/>
-      <button onClick={handleClick}>Se connecter avec Betaseries</button>
+    <div id='main'>
+      <Header />
+      <button className='btn btn-primary' onClick={handleClick}>Se connecter avec Betaseries</button>
+      <br />
       {url && <a href={url}>Clic ici pour poursuivre l'identification</a>}
     </div>
   );
