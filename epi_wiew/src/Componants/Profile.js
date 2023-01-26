@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios";
+import Header from './Header';
 
 const Profile = () => {
 
@@ -37,6 +38,7 @@ const Profile = () => {
 
     return (
         <div>
+            <Header />
             <h1>Welcome to your profile page</h1>
         </div>
     );
