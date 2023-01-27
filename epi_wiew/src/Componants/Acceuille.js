@@ -1,4 +1,4 @@
-import React from 'react'; // add , useEffect if u want use it
+import React from 'react'; // add  ,{ useEffect } if u want use it
 import Header from './Header';
 
 
