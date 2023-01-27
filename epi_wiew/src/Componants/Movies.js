@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from "axios";
 import Header from './Header';
+// import Cookies from 'js-cookie';
+
 
 const Movies = () => {
     const [input, setInput] = React.useState("");
@@ -27,7 +29,7 @@ const Movies = () => {
             <Header />
             <h1>Welcome to your series page</h1>
             <input type="text" onChange={(e) => setInput(e.target.value)} value={input} id="search"></input>
-            <button onClick={postData} id="submitButton">Chercher parmis nos films votre bonheur</button>
+            <button onClick={postData} id="submitButton">Chercher votre bonheur parmis nos films </button>
             <div className="card-container">
                 {Movies.map((movie, index) => (
                     <div key={index} className="card">
@@ -41,7 +43,7 @@ const Movies = () => {
                     </div>
                 ))}
             </div>
-            
+
         </div>
     );
 }

@@ -1,20 +1,21 @@
 import React from 'react';
 import axios from "axios";
 import Header from './Header';
+// import Cookies from 'js-cookie';
+
 
 const Series = () => {
     const [input, setInput] = React.useState("");
     const [shows, setShows] = React.useState([]);
 
-    const postData = () => {
 
+    const postData = () => {
         const clientId = "5e5b18e63fb7";
         const query = input;
         const limit = 20;
 
         axios.get(`https://api.betaseries.com/search/shows?client_id=${clientId}&text=${query}&limit=${limit}`)
             .then(response => {
-                console.log(response.data);
                 setShows(response.data.shows);
             })
             .catch(error => {
@@ -22,28 +23,13 @@ const Series = () => {
             });
     }
 
-    // const data = () => {
-
-    //     const clientId = "5e5b18e63fb7";
-    //     const query = input;
-    //     const limit = 20;
-
-    //     axios.get(`https://api.betaseries.com/shows/favorites?client_id=${clientId}&text=${query}&limit=${limit}`)
-    //         .then(response => {
-    //             console.log(response.data);
-    //             // setShows(response.data.shows);
-    //         })
-    //         .catch(error => {
-    //             console.log(error);
-    //         });
-    // }
 
     return (
         <div>
             <Header />
             <h1>Welcome to your series page</h1>
             <input type="text" onChange={(e) => setInput(e.target.value)} value={input} id="search"></input>
-            <button onClick={postData} id="submitButton">Chercher parmis nos séries votre bonheur</button>
+            <button onClick={postData} id="submitButton">Chercher votre bonheur parmis nos séries </button>
             <div className="card-container">
                 {shows.map((show, index) => (
                     <div key={index} className="card">
@@ -57,7 +43,6 @@ const Series = () => {
                     </div>
                 ))}
             </div>
-            ici viens les series suivies par la personne
         </div>
     );
 }
