@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import Header from './Header';
+import Cookies from 'js-cookie';
 
 const Profile = () => {
 
@@ -23,7 +24,9 @@ const Profile = () => {
         const data = `client_id=${clientId}&client_secret=${clientSecret}&redirect_uri=${redirectUri}&code=${code}`;
         axios.post('https://api.betaseries.com/oauth/access_token', data, config)
             .then(response => {
-                console.log(response.data);
+                console.log(response.data.access_token);
+                const token = response.data.access_token ;
+                Cookies.set('token', token);
             })
             .catch(error => {
                 console.log(error);

@@ -9,6 +9,7 @@
     "axios": "^1.2.3",
     "bootstrap": "^5.2.3",
     "client-oauth2": "^4.3.3",
+    "js-cookie": "^3.0.1",
     "path": "^0.12.7",
     "querystring": "^0.2.1",
     "querystring-es3": "^0.2.1",

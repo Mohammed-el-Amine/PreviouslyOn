@@ -8,6 +8,7 @@ const BetaseriesOAuth2 = () => {
     <div id='main'>
       <Header />
       <h1>Bienvenue a l'acceuil</h1>
+      
     </div>
   );
 }

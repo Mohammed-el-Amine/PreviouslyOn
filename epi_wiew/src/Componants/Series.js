@@ -22,6 +22,22 @@ const Series = () => {
             });
     }
 
+    // const data = () => {
+
+    //     const clientId = "5e5b18e63fb7";
+    //     const query = input;
+    //     const limit = 20;
+
+    //     axios.get(`https://api.betaseries.com/shows/favorites?client_id=${clientId}&text=${query}&limit=${limit}`)
+    //         .then(response => {
+    //             console.log(response.data);
+    //             // setShows(response.data.shows);
+    //         })
+    //         .catch(error => {
+    //             console.log(error);
+    //         });
+    // }
+
     return (
         <div>
             <Header />
@@ -41,6 +57,7 @@ const Series = () => {
                     </div>
                 ))}
             </div>
+            ici viens les series suivies par la personne
         </div>
     );
 }
