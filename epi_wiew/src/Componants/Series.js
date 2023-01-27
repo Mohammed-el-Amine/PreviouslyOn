@@ -37,7 +37,6 @@ const Series = () => {
                             <p>ID: {show.id}</p>
                             <p>Following: {show.following ? "Yes" : "No"}</p>
                             <p>Release Date: {show.release_date}</p>
-                            <p>Slug: {show.slug}</p>
                         </div>
                     </div>
                 ))}
